@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="bg-white p-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+          <div class="w-full md:w-auto flex justify-center">
+            <img 
+              src="logo/logo-colored.png" 
+              alt="Brand Logo" 
+              class="h-8 w-auto object-cover object-top">
+          </div>
+          <button 
+            class="block md:hidden text-gray-800 focus:outline-none" 
+            id="menu-toggle">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+          <div 
+            id="menu-content" 
+            class="hidden w-full md:flex-1 md:flex justify-center items-center md:block mt-4 md:mt-0">
+            <div class="flex flex-wrap justify-center items-center">
+              <input 
+                type="text" 
+                class="w-full md:w-1/3 py-2 px-4 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2 md:mb-0 md:mr-2" 
+                placeholder="Search...">
+              <select 
+                class="py-2 px-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2 md:mb-0 md:mr-2">
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home</option>
+                <option value="books">Books</option>
+                <option value="toys">Toys</option>
+              </select>
+              <button 
+                class="py-2 px-4 bg-blue-500 text-white font-semibold hover:bg-blue-600 border border-blue-500">
+                Search
+              </button>
+            </div>
+          </div>
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="#" class="text-gray-800 hover:text-gray-500">
+              <i class="fas fa-user-circle text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-gray-500">
+              <i class="fas fa-comment-dots text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-gray-500">
+              <i class="fas fa-box text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-gray-500">
+              <i class="fas fa-shopping-cart text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <script>
+        const toggleButton = document.getElementById("menu-toggle");
+        const menuContent = document.getElementById("menu-content");
+      
+        toggleButton.addEventListener("click", () => {
+          menuContent.classList.toggle("hidden");
+        });
+      </script>
+      </header>
+      
+    <br>
+    <section class="hero">
+        <div class="flex flex-wrap items-center justify-between px-4 py-2 bg-white border-b border-gray-200">
+          <div class="flex flex-wrap items-center space-x-6 w-full lg:w-auto">
+            <a href="#" class="text-black hover:text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </a>
+            <a href="#" class="text-sm md:text-lg font-normal hover:text-gray-700">All category</a>
+            <a href="#" class="text-sm md:text-lg font-normal hover:text-gray-700">Hot offers</a>
+            <a href="#" class="text-sm md:text-lg font-normal hover:text-gray-700">Gift boxes</a>
+            <a href="#" class="text-sm md:text-lg font-normal hover:text-gray-700">Projects</a>
+            <a href="#" class="text-sm md:text-lg font-normal hover:text-gray-700">Menu item</a>
+            <div class="relative">
+              <a href="#" class="flex items-center text-sm md:text-lg font-normal hover:text-gray-700">
+                Help
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-end space-x-6 w-full lg:w-auto mt-4 lg:mt-0">
+            <div class="relative group">
+              <a href="#" class="flex items-center text-sm md:text-lg font-normal hover:text-gray-700">
+                English, USD
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute left-0 w-full mt-2 bg-white shadow-lg rounded-md border border-gray-300 z-10 hidden group-hover:block">
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">English</a>
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">Spanish</a>
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">French</a>
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">German</a>
+              </div>
+            </div>
+            <div class="relative group">
+              <a href="#" class="flex items-center text-sm md:text-lg font-normal hover:text-gray-700">
+                Ship to
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <div class="absolute left-0 w-full mt-2 bg-white shadow-lg rounded-md border border-gray-300 z-10 hidden group-hover:block">
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">USA</a>
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">Canada</a>
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">Germany</a>
+                <a href="#" class="block px-4 py-2 text-sm md:text-lg font-normal text-gray-700 hover:bg-gray-100">France</a>
+              </div>
+            </div>
+      </section>
+<section>
+    <div class="flex flex-col lg:flex-row bg-gray-50 p-4 rounded-md shadow">
+        <div class="flex flex-col bg-white border border-gray-200 rounded-md lg:w-1/5 p-4">
+          <a href="#" class="py-2 px-3 text-blue-700 bg-blue-100 rounded-md font-medium">Automobiles</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Clothes and wear</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Home interiors</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Computer and tech</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Tools, equipments</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Sports and outdoor</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Animal and pets</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">Machinery tools</a>
+          <a href="#" class="py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md">More category</a>
+        </div>
+        <div class="flex-1 lg:w-3/5 px-6">
+            <div class="relative">
+              <img src="img/Banner-board-800x420 2.png" alt="Electronic items" class="w-full h-auto rounded-md shadow">
+              <div class="absolute inset-0 flex flex-col items-start p-6">
+                <h2 class="text-lg font-medium text-black">Latest trending</h2>
+                <h1 class="text-2xl font-bold text-black">Electronic items</h1>
+                <button class="mt-4 px-4 py-2 bg-white text-black font-medium border border-gray-300 rounded-md shadow-sm hover:bg-gray-200">
+                  Learn more
+                </button>
+              </div>
+            </div>
+          </div>
+        <div class="lg:w-1/5 flex flex-col space-y-4 mt-4 lg:mt-0">
+          <div class="bg-blue-100 text-blue-700 p-4 rounded-md shadow">
+            <h2 class="text-sm font-medium">Hi, user</h2>
+            <p class="text-xs text-gray-600">let's get stated</p>
+            <div class="mt-3 space-y-2">
+              <button class="w-full px-3 py-2 bg-blue-500 text-white text-sm font-medium rounded-md hover:bg-blue-600">Join now</button>
+              <button class="w-full px-3 py-2 bg-white text-blue-500 text-sm font-medium border border-blue-500 rounded-md hover:bg-blue-100">Log in</button>
+            </div>
+          </div>
+          <div class="bg-orange-200 text-orange-700 p-4 rounded-md shadow">
+            <p class="text-sm font-medium">Get US $10 off with a new supplier</p>
+          </div>
+          <div class="bg-teal-200 text-teal-700 p-4 rounded-md shadow">
+            <p class="text-sm font-medium">Send quotes with supplier preferences</p>
+          </div>
+        </div>
+      </div>   
+</section>  
+<section >
+  <div class="p-6 bg-gray-50">
+    <div class="mb-8">
+      <div class="bg-white shadow-lg p-6 rounded-lg">
+        <h2 class="text-xl font-semibold mb-2">Deals and offers</h2>
+        <p class="text-gray-500">Hygiene equipments</p>
+        <div class="flex items-center justify-start space-x-2 text-gray-800 font-semibold text-lg my-4">
+          <div>04 <span class="text-sm font-normal">Days</span></div>
+          <div>13 <span class="text-sm font-normal">Hour</span></div>
+          <div>34 <span class="text-sm font-normal">Min</span></div>
+          <div>56 <span class="text-sm font-normal">Sec</span></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div class="text-center">
+            <img src="tech/tech (6).png" alt="Smart Watches" class="mx-auto mb-2 w-16 h-16">
+            <p>Smart watches</p>
+            <p class="text-red-500 font-bold">-25%</p>
+          </div>
+          <div class="text-center">
+            <img src="tech/tech (5).png" alt="Laptops" class="mx-auto mb-2 w-16 h-16">
+            <p>Laptops</p>
+            <p class="text-red-500 font-bold">-15%</p>
+          </div>
+          <div class="text-center">
+            <img src="tech/tech (4).png" alt="GoPro Cameras" class="mx-auto mb-2 w-16 h-16">
+            <p>GoPro cameras</p>
+            <p class="text-red-500 font-bold">-40%</p>
+          </div>
+          <div class="text-center">
+            <img src="tech/tech (3).png" alt="Headphones" class="mx-auto mb-2 w-16 h-16">
+            <p>Headphones</p>
+            <p class="text-red-500 font-bold">-25%</p>
+          </div>
+          <div class="text-center">
+            <img src="tech/tech (2).png" alt="Canon Cameras" class="mx-auto mb-2 w-16 h-16">
+            <p>Canon cameras</p>
+            <p class="text-red-500 font-bold">-25%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section >
+    <div class="relative bg-gray-100 shadow-lg rounded-lg overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="relative col-span-1 flex items-center">
+          <div class="w-full h-full">
+            <img src="banners/banner3.png" alt="Background" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white">
+            <h2 class="text-lg md:text-xl lg:text-2xl font-semibold">Home and outdoor</h2>
+            <button class="mt-3 px-4 py-2 bg-white text-blue-600 font-semibold rounded shadow">
+              Source now
+            </button>
+          </div>
+        </div>
+        <div class="col-span-1 md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (1).png" alt="Soft Chairs" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Soft chairs</p>
+            <p class="text-gray-600 text-sm">From USD 19</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (5).png" alt="Sofa & Chair" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Sofa & chair</p>
+            <p class="text-gray-600 text-sm">From USD 19</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (4).png" alt="Kitchen Dishes" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Kitchen dishes</p>
+            <p class="text-gray-600 text-sm">From USD 19</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="tech/tech (6).png" alt="Smart Watches" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Smart watches</p>
+            <p class="text-gray-600 text-sm">From USD 19</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (6).png" alt="Coffee Maker" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Coffee maker</p>
+            <p class="text-gray-600 text-sm">From USD 10</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (7).png" alt="Kitchen Mixer" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Kitchen mixer</p>
+            <p class="text-gray-600 text-sm">From USD 100</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (3).png" alt="Blenders" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Blenders</p>
+            <p class="text-gray-600 text-sm">From USD 39</p>
+          </a>
+          <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+            <img src="interior/interior (8).png" alt="Home Appliance" class="mx-auto mb-2 w-20 h-20 object-contain">
+            <p class="font-medium">Home appliance</p>
+            <p class="text-gray-600 text-sm">From USD 100</p>
+          </a>
+        </div>
+      </div>
+    </div>  
+</section>  
+<br>
+<section class="">
+  <div class="relative bg-gray-100 shadow-lg rounded-lg overflow-hidden">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="relative col-span-1 flex items-center">
+        <div class="w-full h-full">
+          <img src="banners/banner (9).png" alt="Background" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white">
+          <h2 class="text-lg md:text-xl lg:text-2xl font-semibold">Consumer electronics and gadgets</h2>
+          <button class="mt-3 px-4 py-2 bg-white text-blue-600 font-semibold rounded shadow">
+            Source now
+          </button>
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (6).png" alt="Soft Chairs" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Smart watches</p>
+          <p class="text-gray-600 text-sm">From USD 19</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (4).png" alt="Sofa & Chair" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Cameras</p>
+          <p class="text-gray-600 text-sm">From USD 35</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (7).png" alt="Kitchen Dishes" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Headphones</p>
+          <p class="text-gray-600 text-sm">From USD 10</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (2).png" alt="Smart Watches" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Smart phones</p>
+          <p class="text-gray-600 text-sm">From USD 50</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (3).png" alt="Coffee Maker" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Gaming set</p>
+          <p class="text-gray-600 text-sm">From USD 35</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (5).png" alt="Kitchen Mixer" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Laptops and pc</p>
+          <p class="text-gray-600 text-sm">From USD 100</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="interior/interior (7).png" alt="Blenders" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Blenders</p>
+          <p class="text-gray-600 text-sm">From USD 39</p>
+        </a>
+        <a href="#" class="block text-center hover:shadow-lg rounded-lg">
+          <img src="tech/tech (8).png" alt="Home Appliance" class="mx-auto mb-2 w-20 h-20 object-contain">
+          <p class="font-medium">Electronic kattle</p>
+          <p class="text-gray-600 text-sm">From USD 16</p>
+        </a>
+      </div>
+    </div>
+  </div>  
+</section> 
+<br>
+<section>
+  <div class="flex items-center justify-between py-12 px-8 relative" style="background-image: url('banners/banner\ \(5\).png'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-blue-500 opacity-50"></div>
+  
+    <div class="relative z-10 max-w-md text-white">
+      <h1 class="text-3xl font-bold mb-4">An easy way to send requests to all suppliers</h1>
+      <p class="text-lg text-white/80">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+      </p>
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm z-10">
+      <h2 class="text-lg font-bold mb-4">Send quote to suppliers</h2>
+      <form class="space-y-4">
+        <div>
+          <label for="item" class="sr-only">What item you need?</label>
+          <input
+            type="text"
+            id="item"
+            placeholder="What item you need?"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label for="details" class="sr-only">Type more details</label>
+          <textarea
+            id="details"
+            placeholder="Type more details"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex-grow">
+            <label for="quantity" class="sr-only">Quantity</label>
+            <input
+              type="number"
+              id="quantity"
+              placeholder="Quantity"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label for="unit" class="sr-only">Unit</label>
+            <select
+              id="unit"
+              class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>Pcs</option>
+              <option>Kg</option>
+              <option>Box</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white font-bold py-2 rounded-lg hover:bg-blue-600 transition"
+          >
+            Send inquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div> 
+</section>
+<br>
+<section>
+<div class="max-w-7xl mx-auto px-4">
+    <h1 class="text-2xl font-bold mb-6">Recommended items</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+      <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+        <img src="cloth/cloth (5).png" alt="T-shirt" class="w-full h-40 object-contain mb-4" />
+        <p class="text-lg font-bold">$10.30</p>
+        <p class="text-sm text-gray-500">T-shirts with multiple colors, for men</p>
+      </div>
+  
+      <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+        <img src="cloth/cloth (1).png" alt="Jacket" class="w-full h-40 object-contain mb-4" />
+        <p class="text-lg font-bold">$10.30</p>
+        <p class="text-sm text-gray-500">Jeans shorts for men blue color</p>
+      </div>
+  
+      <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+        <img src="cloth/cloth (7).png" alt="Coat" class="w-full h-40 object-contain mb-4" />
+        <p class="text-lg font-bold">$12.50</p>
+        <p class="text-sm text-gray-500">Brown winter coat medium size</p>
+      </div>
+  
+      <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+        <img src="cloth/cloth (4).png" alt="Wallet" class="w-full h-40 object-contain mb-4" />
+        <p class="text-lg font-bold">$34.00</p>
+        <p class="text-sm text-gray-500">Jeans bag for travel for men</p>
+      </div>
+  
+      <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+        <img src="cloth/cloth (6).png" alt="Backpack" class="w-full h-40 object-contain mb-4" />
+        <p class="text-lg font-bold">$99.00</p>
+        <p class="text-sm text-gray-500">Leather wallet</p>
+      </div>
+  
+      <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+        <img src="cloth/cloth (2).png" alt="Wallet" class="w-full h-40 object-contain mb-4" />
+        <p class="text-lg font-bold">$1.00</p>
+        <p class="text-sm text-gray-500">Shorts</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+          <img src="tech/tech (1).png" alt="T-shirt" class="w-full h-40 object-contain mb-4" />
+          <p class="text-lg font-bold">$80</p>
+          <p class="text-sm text-gray-500">Mobile phones </p>
+        </div>
+        <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+          <img src="tech/tech (5).png" alt="Jacket" class="w-full h-40 object-contain mb-4" />
+          <p class="text-lg font-bold">$100</p>
+          <p class="text-sm text-gray-500">laptops and pc</p>
+        </div>
+        <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+          <img src="tech/tech (4).png" alt="Coat" class="w-full h-40 object-contain mb-4" />
+          <p class="text-lg font-bold">$22.50</p>
+          <p class="text-sm text-gray-500">Camera</p>
+        </div>
+        <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+          <img src="interior/interior (7).png" alt="Wallet" class="w-full h-40 object-contain mb-4" />
+          <p class="text-lg font-bold">$34.00</p>
+          <p class="text-sm text-gray-500">Blenders</p>
+        </div>
+        <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+          <img src="interior/interior (6).png" alt="Backpack" class="w-full h-40 object-contain mb-4" />
+          <p class="text-lg font-bold">$99.00</p>
+          <p class="text-sm text-gray-500">Coffee maker</p>
+        </div>
+        <div class="bg-white border rounded-lg p-4 text-center shadow hover:shadow-lg">
+          <img src="interior/interior (5).png" alt="Wallet" class="w-full h-40 object-contain mb-4" />
+          <p class="text-lg font-bold">$1.00</p>
+          <p class="text-sm text-gray-500">Lamp</p>
+        </div>
+      </div>
+  </section>
+</section>
+<section>
+  <div class="bg-gray-50 py-8">
+    <h2 class="text-center text-xl font-semibold text-gray-800 mb-6">Our extra services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="banners/banner 1.webp"
+          alt="Source from Industry Hubs"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-gray-800 font-medium">Source from Industry Hubs</h3>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="banners/banner4.jfif"
+          alt="Customize Your Products"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-gray-800 font-medium">Customize Your Products</h3>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="banners/banner 2.jpg"
+          alt="Fast, reliable shipping by ocean or air"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-gray-800 font-medium">
+            Fast, reliable shipping by ocean or air
+          </h3>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="banners/banner5.jfif"
+          alt="Product monitoring and inspection"
+          class="w-full h-40 object-cover"
+        />
+        <div class="p-4">
+          <h3 class="text-gray-800 font-medium">Product monitoring and inspection</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="bg-gray-50 py-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Suppliers by region</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-gray-600">
+      <!-- Arabic Emirates -->
+      <div class="flex items-center space-x-2">
+        <img src="flags/flag (1).png" alt="UAE Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">Arabic Emirates</p>
+          <a href="#" class="text-sm text-blue-500">shopname.ae</a>
+        </div>
+      </div>
+      <!-- Australia -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg" alt="Australia Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">Australia</p>
+          <a href="#" class="text-sm text-blue-500">shopname.ae</a>
+        </div>
+      </div>
+      <!-- United States -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">United States</p>
+          <a href="#" class="text-sm text-blue-500">shopname.com</a>
+        </div>
+      </div>
+      <!-- Russia -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg" alt="Russia Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">Russia</p>
+          <a href="#" class="text-sm text-blue-500">shopname.ru</a>
+        </div>
+      </div>
+      <!-- Italy -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Italy Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">Italy</p>
+          <a href="#" class="text-sm text-blue-500">shopname.it</a>
+        </div>
+      </div>
+      <!-- Denmark -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg" alt="Denmark Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">Denmark</p>
+          <a href="#" class="text-sm text-blue-500">denmark.com.dk</a>
+        </div>
+      </div>
+      <!-- France -->
+      <div class="flex items-center space-x-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="France Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">France</p>
+          <a href="#" class="text-sm text-blue-500">shopname.com.fr</a>
+        </div>
+      </div>
+      <!-- China -->
+      <div class="flex items-center space-x-2">
+        <img src="flags/icon.png" alt="China Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">China</p>
+          <a href="#" class="text-sm text-blue-500">shopname.ae</a>
+        </div>
+      </div>
+      <!-- Great Britain -->
+      <div class="flex items-center space-x-2">
+        <img src="flags/flag (2).png" alt="UK Flag" class="w-6 h-4 object-cover">
+        <div>
+          <p class="font-medium">Great Britain</p>
+          <a href="#" class="text-sm text-blue-500">shopname.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="mt-8 bg-gray-100 py-8">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-lg font-semibold text-gray-800">Subscribe on our newsletter</h2>
+        <p class="text-gray-600">Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="mt-4 flex justify-center">
+          <input type="email" placeholder="Email" class="px-4 py-2 border border-gray-300 rounded-l-md focus:ring-blue-500 focus:border-blue-500">
+          <button class="px-4 py-2 bg-blue-600 text-white font-medium rounded-r-md hover:bg-blue-700">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 bg-white py-8">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">Brand</h3>
+          <p class="text-sm text-gray-600 mt-2">Best information about the company goes here but now lorem ipsum is</p>
+          <div class="flex space-x-4 mt-4 text-gray-500">
+            <a href="#" class="hover:text-gray-800"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-gray-800"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-gray-800"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-gray-800"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-gray-800"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">About</h3>
+          <ul class="text-sm text-gray-600 space-y-2 mt-2">
+            <li><a href="#" class="hover:text-gray-800">About Us</a></li>
+            <li><a href="#" class="hover:text-gray-800">Find store</a></li>
+            <li><a href="#" class="hover:text-gray-800">Categories</a></li>
+            <li><a href="#" class="hover:text-gray-800">Blogs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">Partnership</h3>
+          <ul class="text-sm text-gray-600 space-y-2 mt-2">
+            <li><a href="#" class="hover:text-gray-800">About Us</a></li>
+            <li><a href="#" class="hover:text-gray-800">Find store</a></li>
+            <li><a href="#" class="hover:text-gray-800">Categories</a></li>
+            <li><a href="#" class="hover:text-gray-800">Blogs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">Information</h3>
+          <ul class="text-sm text-gray-600 space-y-2 mt-2">
+            <li><a href="#" class="hover:text-gray-800">Help Center</a></li>
+            <li><a href="#" class="hover:text-gray-800">Money Refund</a></li>
+            <li><a href="#" class="hover:text-gray-800">Shipping</a></li>
+            <li><a href="#" class="hover:text-gray-800">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-800">Get app</h3>
+          <div class="flex space-x-2 mt-2">
+            <a href="#"><img src="https://via.placeholder.com/120x40" alt="App Store" class="w-32 h-auto"></a>
+            <a href="#"><img src="https://via.placeholder.com/120x40" alt="Google Play" class="w-32 h-auto"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+            
+  </body>
+</html>
